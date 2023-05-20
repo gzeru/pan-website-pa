@@ -1,0 +1,66 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ myalumnus.firstname }} {{ myalumnus.lastname }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ myalumnus.firstname }} {{ myalumnus.lastname }}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Phone:</p>
+    </div>
+    <div class="col-sm-8">
+       <p>{{ myalumnus.phone }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Gender:</p>
+    </div>
+    <div class="col-sm-8">
+       <p>{{ myalumnus.get_gender_display}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Department:</p>
+    </div>
+    <div class="col-sm-8">
+       <p>{{ myalumnus.department}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Course Years:</p>
+    </div>
+    <div class="col-sm-8">
+       <p>{{ myalumnus.get_no_of_course_years_display}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Graduation Year:</p>
+    </div>
+    <div class="col-sm-8">
+       <p>{{ myalumnus.year_of_graduation}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Graduated from:</p>
+    </div>
+    <div class="col-sm-8">
+       <p>{{ myalumnus.get_graduated_from_display}}</p>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
