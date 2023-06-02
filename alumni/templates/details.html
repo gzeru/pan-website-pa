@@ -1,21 +1,23 @@
 {% extends "master.html" %}
 
 {% block title %}
-  Details about {{ myalumnus.firstname }} {{ myalumnus.lastname }}
+  <!--Details about {{ myalumnus.fullname }} {{ myalumnus.lastname }}-->
+      Details about {{ myalumnus.fullname }}
 {% endblock %}
 
 
 {% block content %}
-  <h1>{{ myalumnus.firstname }} {{ myalumnus.lastname }}</h1>
+  <!-- <h1>{{ myalumnus.fullname }} {{ myalumnus.lastname }}</h1> -->
+  <h1>{{ myalumnus.fullname }} </h1>
 <div class="container">
-  <div class="row">
+ <!-- <div class="row">
     <div class="col-sm-4">
       <p>Phone:</p>
     </div>
     <div class="col-sm-8">
        <p>{{ myalumnus.phone }}</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-sm-4">
@@ -51,7 +53,7 @@
        <p>{{ myalumnus.year_of_graduation}}</p>
     </div>
   </div>
-
+<!--
   <div class="row">
     <div class="col-sm-4">
       <p>Graduated from:</p>
@@ -60,7 +62,7 @@
        <p>{{ myalumnus.get_graduated_from_display}}</p>
     </div>
   </div>
-
+-->
 </div>
 
 {% endblock %}

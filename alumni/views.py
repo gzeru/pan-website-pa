@@ -10,7 +10,7 @@ def alumni(request):
     myalumni = Alumnus.objects.all().values()
     template = loader.get_template('all_alumni.html')
     context = {
-        'myalumni ': myalumni,
+        'myalumni': myalumni,
     }
     return HttpResponse(template.render(context, request))
 
@@ -57,7 +57,8 @@ def index(request):
         if 'q' in request.GET:
             q = request.GET['q']
             # data = Data.objects.filter(first_name__icontains=q)
-            multiple_q = Q(Q(firstname__icontains=q) | Q(lastname__icontains=q))
+            #  multiple_q = Q(Q(fullname__icontains=q) | Q(lastname__icontains=q))
+            multiple_q = Q(Q(fullname__icontains=q) |q(department__contains=q))
             alumnus = Alumnus.objects.filter(multiple_q)
         else:
             alumnus = Alumnus.objects.all()

@@ -13,7 +13,7 @@
 
   <ul>
     {% for x in myalumni  %}
-      <li><a href="/alumni /details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+      <li><a href="/alumni/details/{{ x.id }}">{{ x.fullname }} {{ x.lastname }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
