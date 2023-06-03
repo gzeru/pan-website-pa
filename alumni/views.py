@@ -58,7 +58,7 @@ def index(request):
             q = request.GET['q']
             # data = Data.objects.filter(first_name__icontains=q)
             #  multiple_q = Q(Q(fullname__icontains=q) | Q(lastname__icontains=q))
-            multiple_q = Q(Q(fullname__icontains=q) |q(department__contains=q))
+            multiple_q = Q(Q(fullname__icontains=q) |Q(department__icontains=q)|Q(no_of_course_years__icontains=q)|Q(year_of_graduation__icontains=q)|Q(gender__contains=q))
             alumnus = Alumnus.objects.filter(multiple_q)
         else:
             alumnus = Alumnus.objects.all()

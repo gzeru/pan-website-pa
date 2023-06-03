@@ -4,7 +4,6 @@
   POLY-PEDA-BDU Association
 {% endblock %}
 
-
 {% block content %}
 
    {% if q %}
@@ -12,11 +11,15 @@
    {% else %}
       <h1>Hey! You forgot To Search For A alumnus </h1>
    {% endif %}
-<table class="table">
+<table class="table table-success table-bordered table-striped">
   <thead>
     <tr>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Fullname</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Department</th>
+      <th scope="col">Course Years</th>
+      <th scope="col">Year Of Graduation</th>
+
     </tr>
   </thead>
   <tbody>
@@ -24,7 +27,10 @@
     <tr>
       <td>{{alumnus.fullname}}</td>
       <!--<td>{{alumnus.lastname}}</td>-->
-      <td>{{alumnus.year_in_school}}</td>
+       <td>{{alumnus.gender}}</td>
+       <td>{{alumnus.department}}</td>
+        <td>{{alumnus.no_of_course_years}}</td>
+      <td>{{alumnus.year_of_graduation}}</td>
     </tr>
    {% endfor %}
   </tbody>
